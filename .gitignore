@@ -1,0 +1,8 @@
+*.pdf
+build/
+*.jpeg
+*.png
+*.jpg
+PreviousYear/
+*.docx
+Mantasa/
