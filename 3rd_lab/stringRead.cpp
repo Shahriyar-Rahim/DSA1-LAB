@@ -9,4 +9,4 @@ int main()
 
     cout << "The string is: " << s;
     cout << endl;
-}/run/media/shahriyar/New Volume/BAUST/L-2, T-1/DSA lab
+}
