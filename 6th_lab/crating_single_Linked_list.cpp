@@ -102,9 +102,11 @@ void SingleLinkedList:: traverse() {
     int nodeIndx = 1;
     cout<< "\nCurrent list:\n";
     for(; cur != nullptr; nodeIndx++){
-        cout <<"[Node " << nodeIndx << " | Data: " << cur->data
-            << " | Addre: " << cur << " Next: " << cur->next << "] -> ";
-        cur = cur->next;
+        // cout <<"Node no: " << nodeIndx << " -- Data: " << cur->data
+        //     << " -- Addre: " << cur << " Next: " << cur->next << " -> ";
+        // cur = cur->next;
+        cout << cur->data << " -> ";
+        cur = cur -> next;
     }
     cout << "nullptr\n";
 }
