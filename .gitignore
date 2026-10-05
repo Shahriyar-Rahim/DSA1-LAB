@@ -6,6 +6,6 @@ build/
 PreviousYear/
 *.docx
 Mantasa/
-lab_mid_practice/
+# lab_mid_practice/
 LabBook/
 QUestions/
