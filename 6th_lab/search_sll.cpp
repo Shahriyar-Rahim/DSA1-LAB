@@ -27,7 +27,7 @@ public:
     void insertElend(int val);
     void takeInp();
     void travarse();
-    void search(int t); // where t is the target value
+    void search(); // where t is the target value
 };
 
 SingleLinkList:: SingleLinkList() {
@@ -72,8 +72,74 @@ void SingleLinkList:: insertElend(int x) {
          << " (New tail) at address: " << newNode << "\n";
 }
 
-int main() {
+void SingleLinkList :: takeInp() {
+    int n, val;
+    cout << "How many initial node you want?\n";
+    cin >> n;
+
+    for (int i = 1; i <= n; i++)
+    {
+        cout << "Enter value for node " << i << ": ";
+        cin >> val;
+        insertElend(val);
+    }
+}
+
+void SingleLinkList::travarse()
+{
+    // if the list is empty
+    if(head == nullptr){
+        cout << "\nList is Empty: nulllptr\n";
+        return;
+    }
+
+    Node* cur = head;
+    int nodeIndx = 1;
+    cout<< "\nCurrent list:\n";
+    for(; cur != nullptr; nodeIndx++){
+        // cout <<"Node no: " << nodeIndx << " -- Data: " << cur->data
+        //     << " -- Addre: " << cur << " Next: " << cur->next << " -> ";
+        // cur = cur->next;
+        cout << cur->data << " -> ";
+        cur = cur -> next;
+    }
+    cout << "nullptr\n";
+}
+
+void SingleLinkList::search() {
+    int t;
+    cout << "ENter the value u want to search: ";
+    cin >> t;
+    if(head == nullptr){
+        cout << "List is empty\n";
+        return;
+    }
+
+    Node* curr = head;
+    int pos = 1;
+    bool found = false;
+
+    while (curr != nullptr)
+    {
+        if(curr->data == t){
+            cout << "Found " << t << " at posotion " << pos << " and the address is " << curr << endl;
+            found = true;
+            break;
+        }
+        curr = curr->next;
+        pos++;
+    }
+
+    if(!found){
+        cout << "The element " << t << " does not exists\n";
+    }
     
+}
+
+int main() {
+    SingleLinkList l;
+    l.takeInp();
+    l.search();
     
     return 0;
 }
